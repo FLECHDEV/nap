@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NAP-Accueil
+{% endblock %}
+
+{# Override negative #}
+{% block block_menu %}{% endblock %}
+{% block body %}
+
+    {% for flashError in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+
+	{% for flashError in app.flashes('success') %}
+        <div class="alert alert-danger" role="alert">{{ message }}</div>
+    {% endfor %}
+
+	<div id="menu_principal">
+		<div id="background_menu">
+			<a class="diesirae" href="{{path('diesirae')}}" title="DIES IRAE tribute Noir Désir">DIESIRAE</a>
+			<a class="groupes">groupes</a>
+			<a class="agenda" href="#" title="AGENDA">agenda</a>
+			<a class="norm" href="{{path ('app_home')}}" title="ACCUEIL">NORM'AND</a>
+			<a class="association" href="{{path('association')}}" title="ASSOCIATION">association</a>
+			<a class="bismuth" href="#" title="BISMUTH">BISMUTH</a>
+			<a class="contact" href="{{path ('contact')}}" title="contact">contact</a>
+			<a class="connexion" href="{{path ('app_login')}}" title="Connexion">Connexion</a>
+			<a class="concerts">concerts</a>
+			<a class="serial" href="#" title="SERIAL CLOCK KILLER">SERIAL CLOCK KILLER</a>
+			<a class="loi">loi 1901</a>
+			<a class="prod" href="{{path ('app_home')}}" title="ACCUEIL">.PROD</a>
+			<a class="evenements">évènements</a>
+			<a class="djoh" href="#" title="DJOH">DJOH</a>
+			<a class="geminii" href="#" title="GEMINII">GEMINii</a>
+			<a class="rock">rock</a>
+			<a class="espace" href="" title="ESPACE ADHERENTS">espace adhérents</a>
+
+			{% if is_granted('ROLE_ADMIN') %}
+            <a class="utilisateurs" href="{{path ('user_index') }}" title="UTILISATEURS">utilisateurs</a>
+            {% endif %}
+		</div>
+	</div>
+
+	{{ include('includes/footer.html.twig') }}
+
+	{# <div id="lemenu">
+		<div id="lemenuprincipal">
+			<div id="carre"></div>
+			<a class="diesirae" href="{{path('diesirae')}}" title="DIES IRAE tribute Noir Désir">DIESIRAE</a>
+			<a class="groupes">groupes</a>
+			<a class="agenda" href="#" title="AGENDA">agenda</a>
+			<a class="norm" href="{{path ('main')}}" title="ACCUEIL">NORM'AND</a>
+			<a class="association" href="{{path('association')}}" title="ASSOCIATION">association</a>
+			<a class="bismuth" href="#" title="BISMUTH">BISMUTH</a>
+			<a class="contact" href="{{path ('contact')}}" title="contact">contact</a>
+			<a class="connexion" href="{{path ('connexion')}}" title="Connexion">Connexion</a>
+			<a class="concerts">concerts</a>
+			<a class="serial" href="#" title="SERIAL CLOCK KILLER">SERIAL CLOCK KILLER</a>
+			<a class="loi">loi 1901</a>
+			<a class="prod" href="{{path ('main')}}" title="ACCUEIL">.PROD</a>
+			<a class="evenements">évènements</a>
+			<a class="djoh" href="#" title="DJOH">DJOH</a>
+			<a class="geminii" href="#" title="GEMINII">GEMINii</a>
+			<a class="rock">rock</a>
+			<a class="espace" href="" title="EEPACE ADHERENTS">espace adhérents</a>
+		</div>
+	</div> #}
+
+{% endblock %}

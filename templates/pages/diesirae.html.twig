@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NAP-Dies Irae{% endblock %}
+
+{% block body %}
+
+    <img class="imgDiesirae" src="{{ asset('images/logodies.png')|imagine_filter('logo') }}"><br><br>
+    <div id="textDiesirae">
+        <p class="text-center">DIES IRAE: Album live du célèbre groupe de rock français "NOIR DÉSIR".
+            Il existe quelques tributes "noir désir" dans notre beau pays qu'est la France mais DIES IRAE a vraiment de la gueule!
+            Une gueule vocale et musicale très proche du quatuor qui nous a bercé pendant des années, fermez les yeux et vous y êtes ! 
+            Une voix déchirante et déchirée, des guitares hurlantes soutenues par le duo basse-batterie,
+            les cinq membres de ce tribute vont vous électriser !
+            N'hésitez pas une seconde en la qualité et le rendu scénique de ce tribute, ils mettent le feu !
+        </p>
+    </div>
+    <br>
+    <br>
+
+    <div id="videoDiesirae">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/q7PJkz69SLk" frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <br>
+    <br>
+    
+    {# <div class="imgDies">
+        <div class"imgbloc1">
+            <img class="imgDiesirae" src="{{ asset('images/dies2.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies4.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies5.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies6.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies7.jpg')|imagine_filter('imagedies') }}"><br><br>
+        </div>
+        <div class="imgBloc2">
+            <img class="imgDiesirae" src="{{ asset('images/dies3.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies11.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies9.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies12.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies14.jpg')|imagine_filter('imagedies') }}"><br><br>
+            <img class="imgDiesirae" src="{{ asset('images/dies10.jpg')|imagine_filter('imagedies') }}">
+        </div>
+    </div> #}
+
+{% endblock %}

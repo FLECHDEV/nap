@@ -1,0 +1,36 @@
+/**--------------- Main -------------------**/
+
+body {
+    background-color: black;
+    color: white!important;
+    margin: 5;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/** ------------- boutons ----------------- **/
+
+.deconnexion:hover {
+    visibility: 0.8;
+    text-decoration: none!important;
+}
+
+
+/** ------------- FOOTER ----------------- **/
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+
+/** ------------- HEADER ----------------- **/
+
+.header {
+    margin-top: 25px;
+}

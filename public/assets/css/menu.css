@@ -1,0 +1,234 @@
+/**--------------- menu.html.twig ---------------*/
+
+#menu_principalP {
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#background_menuP {
+    width: 453.33px;
+    height: 366.66px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.diesiraeP {
+    color: #FFE74C;
+    font-size: 23.33px;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    top: 60px;
+    right: 40px;
+    letter-spacing: -0.3em;
+    transition: .3s ease-in-out;
+}
+
+.groupesP {
+    color: #F3F3F4;
+    font-size: 18.6px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    top: 133.33px;
+    right: 35px;
+    letter-spacing: -0.3em;
+}
+
+.agendaP {
+    color: #dc0d12;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    bottom: 93.33px;
+    right: 20px;
+    transition: .3s ease-in-out;
+}
+
+.normP {
+    color: #d5dc0d;
+    font-size: 46.66px;
+    text-decoration: none;
+    position: relative;
+    bottom: 43.33px;
+    right: 140px;
+    transition: .3s ease-in-out;
+}
+
+.associationP {
+    color: #F3F3F4;
+    font-size: 26.66px;
+    text-decoration: none;
+    position: relative;
+    bottom: 133.33px;
+    left: 80px;
+    transition: .3s ease-in-out;
+}
+
+.bismuthP {
+    color: #FFE74C;
+    font-size: 23.33px;
+    text-decoration: none;
+    position: relative;
+    bottom: 100px;
+    right: 43.33px;
+    letter-spacing: 0.4em;
+    transition: .3s ease-in-out;
+}
+
+.contactP {
+    color: #3B28CC;
+    font-size: 14.66px;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    top: 15px;
+    right: 220px;
+    letter-spacing: -0.4em;
+    transition: .3s ease-in-out;
+}
+
+.connexionP {
+    color: #3B28CC;
+    font-size: 18.66px;
+    text-decoration: none;
+    position: relative;
+    bottom: 66.66px;
+    right: 196px;
+    transition: .3s ease-in-out;
+}
+
+.concertsP {
+    color: #F3F3F4;
+    font-size: 23.33px;
+    position: relative;
+    bottom: 293.33px;
+    left: 215px;
+}
+
+.serialP {
+    color: #FFE74C;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    bottom: 259.66px;
+    left: 53px;
+    transition: .3s ease-in-out;
+}
+
+.loiP {
+    color: #F3F3F4!important;
+    font-size: 16.66px;
+    position: relative;
+    bottom: 220px;
+    right: 40px;
+}
+
+.prodP {
+    color: #d5dc0d;
+    font-size: 46.66px;
+    text-decoration: none;
+    position: relative;
+    left: 233px;
+    bottom: 466.66px;
+    transition: .3s ease-in-out;
+}
+
+.evenementsP {
+    color: #F3F3F4;
+    font-size: 20px;
+    position: relative;
+    bottom: 430px;
+    left: 133.33px;
+}
+
+.djohP {
+    color: #FFE74C;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    bottom: 400px;
+    left: 53.33px;
+    transition: .3s ease-in-out;
+}
+
+.geminiiP {
+    color: #FFE74C;
+    font-size: 23.33px;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    bottom: 483.33px;
+    left: 70px;
+    letter-spacing: -0.3em;
+    transition: .3s ease-in-out;
+}
+
+.espaceP {
+    color: #dc0d12;
+    font-size: 16.66px;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    bottom: 360px;
+    left: 25px;
+    letter-spacing: -0.4em;
+    transition: .3s ease-in-out;
+}
+
+.rockP {
+    color: #F3F3F4;
+    font-size: 16.66px;
+    position: relative;
+    bottom: 460px;
+    left: 30px;
+}
+
+.enregistrementP {
+    color: #06fd96;
+    font-size: 18px;
+    position: relative;
+    left: 20px;
+    bottom: 400px;
+    transition: .3s ease-in-out;
+}
+
+.utilisateursP {
+    color: #06fd96;
+    font-size: 18px;
+    position: relative;
+    bottom: 400px;
+    left: 30px;
+    transition: .3s ease-in-out;
+}
+
+
+/**------------------ HOVER MENU----------------- **/
+
+.diesiraeP:hover,
+.agendaP:hover,
+.associationP:hover,
+.normP:hover,
+.bismuthP:hover,
+.contactP:hover,
+.serialP:hover,
+.connexionP:hover,
+.prodP:hover,
+.djohP:hover,
+.geminiiP:hover,
+.espaceP:hover {
+    color: #918b8f;
+    transform: scale(1.1);
+    transition-duration: 1s;
+}
+
+#menu_principalP a:hover {
+    text-decoration: none;
+}

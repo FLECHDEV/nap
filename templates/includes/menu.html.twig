@@ -1,0 +1,28 @@
+    <div id="menu_principalP">
+        <div id="background_menuP">
+            <a class="diesiraeP" href="{{path('diesirae')}}" title="DIES IRAE tribute Noir Désir">DIESIRAE</a>
+            <a class="groupesP">groupes</a>
+            <a class="agendaP" href="#" title="AGENDA">agenda</a>
+            <a class="normP" href="{{path ('app_home')}}" title="ACCUEIL">NORM'AND</a>
+            <a class="associationP" href="{{path('association')}}" title="ASSOCIATION"> association</a>
+            <a class="bismuthP" href="#" title="BISMUTH">BISMUTH</a>
+            <a class="contactP" href="{{path ('contact')}}" title="contact">contact</a>
+            <a class="connexionP" href="{{path ('app_login')}}" title="Connexion">Connexion</a>
+            <a class="concertsP">concerts</a>
+            <a class="serialP" href="#" title="SERIAL CLOCK KILLER">SERIAL CLOCK KILLER</a>
+            <a class="loiP">loi 1901</a>
+            <a class="prodP" href="{{path ('app_home')}}" title="ACCUEIL">.PROD</a>
+            <a class="evenementsP">évènements</a>
+            <a class="djohP" href="#" title="DJOH">DJOH</a>
+            <a class="geminiiP" href="#" title="GEMINII">GEMINii</a>
+            <a class="rockP">rock</a>
+            <a class="espaceP" href="" title="ESPACE ADHERENTS">espace adhérents</a>
+            {% if is_granted('ROLE_ADMIN') %}
+
+            <a class="utilisateursP" href="{{path ('user_index') }}" title="UTILISATEURS">utilisateurs</a>
+            {% endif %}
+
+        </div>
+    </div>
+    <br>
+    <br>

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>Utilisateurs NAP</h1>
+
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">pseudo</th>
+                <th scope="col">Roles</th>
+                <th scope="col">Mot de passe</th>
+                <th scope="col">Email</th>
+                <th scope="col">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>*****</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a type="button" class="btn btn-success" href="{{ path('user_show', {'id': user.id}) }}">Fiche</a>
+                    <a type="button" class="btn btn-warning" href="{{ path('user_edit', {'id': user.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a type="button" class="btn btn-dark btn-lg btn-block" href="{{ path('user_new') }}">Nouveau</a>
+{% endblock %}

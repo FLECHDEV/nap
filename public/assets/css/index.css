@@ -1,0 +1,282 @@
+/**--------------- index.html.twig -------------------*/
+
+#menu_principal {
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#background_menu {
+    width: 680px;
+    height: 550px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.diesirae {
+    color: #FFE74C;
+    font-size: 35px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    top: 90px;
+    right: 60px;
+    letter-spacing: -0.3em;
+    transition: .3s ease-in-out;
+}
+
+.groupes {
+    color: #F3F3F4!important;
+    font-size: 28px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    top: 200px;
+    right: 60px;
+    letter-spacing: -0.3em;
+}
+
+.agenda {
+    color: #dc0d12;
+    font-size: 30px;
+    position: relative;
+    bottom: 140px;
+    right: 35px;
+    transition: .3s ease-in-out;
+}
+
+.norm {
+    color: #d5dc0d;
+    font-size: 70px;
+    position: relative;
+    bottom: 65px;
+    right: 200px;
+    transition: .3s ease-in-out;
+}
+
+.association {
+    color: #F3F3F4;
+    font-size: 40px;
+    position: relative;
+    bottom: 200px;
+    left: 110px;
+    transition: .3s ease-in-out;
+}
+
+.bismuth {
+    color: #FFE74C;
+    font-size: 35px;
+    position: relative;
+    bottom: 145px;
+    right: 75px;
+    letter-spacing: 0.4em;
+    transition: .3s ease-in-out;
+}
+
+.contact {
+    color: #3B28CC;
+    font-size: 22px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    top: 24px;
+    right: 340px;
+    letter-spacing: -0.4em;
+    transition: .3s ease-in-out;
+}
+
+.connexion {
+    color: #3B28CC;
+    font-size: 28px;
+    position: relative;
+    bottom: 100px;
+    right: 280px;
+    transition: .3s ease-in-out;
+}
+
+.concerts {
+    color: #F3F3F4!important;
+    font-size: 35px;
+    position: relative;
+    bottom: 440px;
+    left: 300px;
+}
+
+.serial {
+    color: #FFE74C;
+    font-size: 30px;
+    position: relative;
+    bottom: 385px;
+    left: 60px;
+    transition: .3s ease-in-out;
+}
+
+.loi {
+    color: #F3F3F4!important;
+    font-size: 25px;
+    position: relative;
+    bottom: 330px;
+    right: 70px;
+}
+
+.prod {
+    color: #d5dc0d;
+    font-size: 70px;
+    position: relative;
+    left: 340px;
+    bottom: 700px;
+    transition: .3s ease-in-out;
+}
+
+.evenements {
+    color: #F3F3F4!important;
+    font-size: 30px;
+    position: relative;
+    bottom: 645px;
+    left: 190px;
+}
+
+.djoh {
+    color: #FFE74C;
+    font-size: 27px;
+    position: relative;
+    bottom: 595px;
+    left: 70px;
+    transition: .3s ease-in-out;
+}
+
+.geminii {
+    color: #FFE74C;
+    font-size: 35px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    bottom: 715px;
+    left: 100px;
+    letter-spacing: -0.3em;
+    transition: .3s ease-in-out;
+}
+
+.rock {
+    color: #F3F3F4;
+    font-size: 25px;
+    position: relative;
+    bottom: 690px;
+    left: 42px;
+}
+
+.espace {
+    color: #dc0d12;
+    font-size: 25px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    bottom: 540px;
+    left: 45px;
+    letter-spacing: -0.4em;
+    transition: .3s ease-in-out;
+}
+
+.enregistrement {
+    color: #06fd96;
+    font-size: 27px;
+    position: relative;
+    bottom: 600px;
+    left: 20px;
+    transition: .3s ease-in-out;
+}
+
+.utilisateurs {
+    color: #06fd96;
+    font-size: 27px;
+    position: relative;
+    bottom: 600px;
+    left: 30px;
+    transition: .3s ease-in-out;
+}
+
+
+/**------------------ HOVER INDEX ----------------- **/
+
+.diesirae:hover,
+.agenda:hover,
+.association:hover,
+.bismuth:hover,
+.contact:hover,
+.serial:hover,
+.connexion:hover,
+.prod:hover,
+.geminii:hover,
+.espace:hover {
+    color: #918b8f;
+    transform: scale(1.1);
+    transition-duration: 1s;
+}
+
+.norm:hover,
+.djoh:hover,
+.enregistrement:hover {
+    color: #918b8f;
+    transform: scale(0.8);
+    transition-duration: 1s;
+}
+
+#menu_principal a:hover {
+    text-decoration: none;
+}
+
+
+/** -------- Lemenu ------- **/
+
+
+/* 
+#lemenu {
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none!important;
+}
+
+#lemenu a:hover {
+    text-decoration: none;
+}
+
+#lemenuprincipal {
+    height: 500px;
+    width: 500px;
+    background: rgb(119, 184, 36);
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 130px;
+}
+
+.carre {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    transform: rotate(45deg);
+    background: rgb(233, 79, 8);
+}
+
+.norm {
+    color: #fffffe;
+    font-size: 100px;
+    position: relative;
+    transform: rotate(325deg);
+    bottom: 60px;
+    right: 2px;
+}
+
+.prod {
+    color: #ffffff;
+    font-size: 70px;
+    position: relative;
+    transform: rotate(45deg);
+} */
