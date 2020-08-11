@@ -18,20 +18,20 @@ class Dialogue
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=500)
+     * @ORM\Column(type="text")
      */
     private $contenu;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $date;
+    private $created_at;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class)
+     * @ORM\ManyToOne(targetEntity=User::class)
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
+    private $User;
 
     public function getId(): ?int
     {
@@ -50,26 +50,26 @@ class Dialogue
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->created_at;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setCreatedAt(\DateTimeInterface $created_at): self
     {
-        $this->date = $date;
+        $this->created_at = $created_at;
 
         return $this;
     }
 
-    public function getUser(): ?user
+    public function getUser(): ?User
     {
-        return $this->user;
+        return $this->User;
     }
 
-    public function setUser(?user $user): self
+    public function setUser(?User $User): self
     {
-        $this->user = $user;
+        $this->User = $User;
 
         return $this;
     }
