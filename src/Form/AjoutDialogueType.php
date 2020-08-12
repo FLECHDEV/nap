@@ -10,14 +10,15 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class DialogueType extends AbstractType
+class AjoutDialogueType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('contenu', TextareaType::class)
-            ->add('User')
-            ->add('created_at', DateTimeType::class)
+        ->add('contenu', TextareaType::class)
+        // ->add('User')
+        ->add('created_at', DateTimeType::class)
+        ->add('Publier', SubmitType::class)
         ;
     }
 

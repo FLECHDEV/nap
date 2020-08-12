@@ -31,9 +31,9 @@
 			<a class="prod" href="{{path ('app_home')}}" title="ACCUEIL">.PROD</a>
 			<a class="evenements">évènements</a>
 			<a class="djoh" href="#" title="DJOH">DJOH</a>
-			<a class="geminii" href="#" title="GEMINII">GEMINii</a>
+			<a class="geminii" href="" title="GEMINII">GEMINii</a>
 			<a class="rock">rock</a>
-			<a class="espace" href="" title="ESPACE ADHERENTS">espace adhérents</a>
+			<a class="espace" href="{{ path('adherents')}}" title="ESPACE ADHERENTS">espace adhérents</a>
 
 			{% if is_granted('ROLE_ADMIN') %}
             <a class="utilisateurs" href="{{path ('user_index') }}" title="UTILISATEURS">utilisateurs</a>

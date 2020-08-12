@@ -15,8 +15,12 @@
     margin-right: auto;
 }
 
+#background_menuP a {
+    text-shadow: 4px 4px 0px rgb(27, 24, 24);
+}
+
 .diesiraeP {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 23.33px;
     text-decoration: none;
     writing-mode: vertical-rl;
@@ -29,7 +33,7 @@
 }
 
 .groupesP {
-    color: #F3F3F4;
+    color: #78af9f;
     font-size: 18.6px;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -40,7 +44,7 @@
 }
 
 .agendaP {
-    color: #dc0d12;
+    color: #b43e23;
     font-size: 20px;
     text-decoration: none;
     position: relative;
@@ -50,7 +54,7 @@
 }
 
 .normP {
-    color: #d5dc0d;
+    color: #eed9b7;
     font-size: 46.66px;
     text-decoration: none;
     position: relative;
@@ -60,7 +64,7 @@
 }
 
 .associationP {
-    color: #F3F3F4;
+    color: #78af9f;
     font-size: 26.66px;
     text-decoration: none;
     position: relative;
@@ -70,7 +74,7 @@
 }
 
 .bismuthP {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 23.33px;
     text-decoration: none;
     position: relative;
@@ -81,7 +85,7 @@
 }
 
 .contactP {
-    color: #3B28CC;
+    color: #587f9e;
     font-size: 14.66px;
     text-decoration: none;
     writing-mode: vertical-rl;
@@ -94,7 +98,7 @@
 }
 
 .connexionP {
-    color: #3B28CC;
+    color: #587f9e;
     font-size: 18.66px;
     text-decoration: none;
     position: relative;
@@ -104,7 +108,7 @@
 }
 
 .concertsP {
-    color: #F3F3F4;
+    color: #78af9f;
     font-size: 23.33px;
     position: relative;
     bottom: 293.33px;
@@ -112,7 +116,7 @@
 }
 
 .serialP {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 20px;
     text-decoration: none;
     position: relative;
@@ -122,7 +126,7 @@
 }
 
 .loiP {
-    color: #F3F3F4!important;
+    color: #78af9f!important;
     font-size: 16.66px;
     position: relative;
     bottom: 220px;
@@ -130,7 +134,7 @@
 }
 
 .prodP {
-    color: #d5dc0d;
+    color: #eed9b7;
     font-size: 46.66px;
     text-decoration: none;
     position: relative;
@@ -140,7 +144,7 @@
 }
 
 .evenementsP {
-    color: #F3F3F4;
+    color: #78af9f;
     font-size: 20px;
     position: relative;
     bottom: 430px;
@@ -148,7 +152,7 @@
 }
 
 .djohP {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 18px;
     text-decoration: none;
     position: relative;
@@ -158,7 +162,7 @@
 }
 
 .geminiiP {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 23.33px;
     text-decoration: none;
     writing-mode: vertical-rl;
@@ -171,7 +175,7 @@
 }
 
 .espaceP {
-    color: #dc0d12;
+    color: #b43e23;
     font-size: 16.66px;
     text-decoration: none;
     writing-mode: vertical-rl;
@@ -184,7 +188,7 @@
 }
 
 .rockP {
-    color: #F3F3F4;
+    color: #78af9f;
     font-size: 16.66px;
     position: relative;
     bottom: 460px;
@@ -192,7 +196,7 @@
 }
 
 .enregistrementP {
-    color: #06fd96;
+    color: #d36e2d;
     font-size: 18px;
     position: relative;
     left: 20px;
@@ -201,7 +205,7 @@
 }
 
 .utilisateursP {
-    color: #06fd96;
+    color: #d36e2d;
     font-size: 18px;
     position: relative;
     bottom: 400px;
@@ -225,6 +229,7 @@
 .geminiiP:hover,
 .espaceP:hover {
     color: #918b8f;
+    text-shadow: none;
     transform: scale(1.1);
     transition-duration: 1s;
 }

@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdherentsController!{% endblock %}
+
+{% block body %}
+    <div id="adherents">
+
+        <div id="textAdherents">
+            <p id="titreAdherents">Espace adhérents</p>
+            <p id="resumeAdhrents">Chers adhérents, bienvenue dans vôtre espace Norm’And.Prod.
+                Vous y trouverez toutes les infos dont vous aurez besoins, les règles de l’association,
+                les comptes rendus de réunions, les projets, numéros de téléphones, mails, ainsi qu’un espace blog pour discuter.
+                À bientôt</p>
+        </div>
+
+        <br><br>
+
+        <div id="dirigeants">
+            <p id="titreDirigeants">Les dirigeants</p><br><br>
+
+            <div id="blocs">
+                <div id="blocPresident">
+                    <img class="imgPresident" src="{{ asset('images/loloavatar.png') }}"><br>
+                    <p class="textPresident">
+                        Président<br>
+                        Acard Laurent<br>
+                        06 00 00 00 00
+                    </p>
+                </div>
+
+                <div id="blocTresorier">
+                    <img class="imgTresorier" src="{{ asset('images/franckavatar.png') }}"><br>
+                    <p class="textTresorier">
+                        Trésorier<br>
+                        Lechangeur Franck<br>
+                        06 00 00 00 00
+                    </p>
+                </div>
+
+                <div id="blocSecretaire">
+                    <img class="imgSecretaire"
+                        src="{{ asset('images/guiguiavatar.png') }}"><br>
+                    <p class="textSecretaire">
+                        Sectrétaire<br>
+                        Bouquerel Guillaume<br>
+                        06 00 00 00 00
+                    </p>
+                </div>
+
+                <div id="blocSecretaireAdj">
+                    <img class="imgSecretaireAdj" src="{{ asset('images/juavatar.png') }}"><br>
+                    <p class="textSecretaireAdj">
+                        Secrétaire adj<br>
+                        Marie Julien<br>
+                        06 00 00 00 00
+                    </p>
+                </div>
+
+                <div id="blocTresorierAdj">
+                    <img class="imgTresorierAdj" src="{{ asset('images/mickavatar.png') }}"><br>
+                    <p class="textTresorierAdj">
+                        Trésorier adjoint<br>
+                        Benicourt Mickael<br>
+                        06 00 00 00 00
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <br><br>
+
+{# <div class="zoom colonne">
+<div>
+<div id="tofDirigeants"><img src="{{ asset('images/loloavatar.png') }}" /></div>
+</div>
+<div>
+<div id="tofDirigeants"><img src="{{ asset('images/franckavatar.png') }}" /></div>
+</div>
+<div>
+<div id="tofDirigeants"><img src="{{ asset('images/guiguiavatar.png') }}" /></div>
+</div>
+<div>
+<div id="tofDirigeants"><img src="{{ asset('images/juavatar.png') }}" /></div>
+</div>
+<div>
+<div id="tofDirigeants"><img src="{{ asset('images/mickavatar.png') }}" /></div>
+</div>
+</div> #}
+
+        <br><br>
+
+        <div id="documents">
+            <p id="titreDocuments">Les documents</p>
+        </div>
+
+        <br><br>
+
+        <div id="exprime">
+            <p id="titreExprime">Exprimez-vous</p>
+
+        </div>
+    </div> 
+{% endblock %}

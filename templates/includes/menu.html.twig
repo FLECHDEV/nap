@@ -16,7 +16,7 @@
             <a class="djohP" href="#" title="DJOH">DJOH</a>
             <a class="geminiiP" href="#" title="GEMINII">GEMINii</a>
             <a class="rockP">rock</a>
-            <a class="espaceP" href="" title="ESPACE ADHERENTS">espace adhérents</a>
+            <a class="espaceP" href="{{ path('adherents')}}" title="ESPACE ADHERENTS">espace adhérents</a>
             {% if is_granted('ROLE_ADMIN') %}
 
             <a class="utilisateursP" href="{{path ('user_index') }}" title="UTILISATEURS">utilisateurs</a>

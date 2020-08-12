@@ -17,8 +17,12 @@
     margin-top: 50px;
 }
 
+#background_menu a {
+    text-shadow: 4px 4px 0px rgb(27, 24, 24);
+}
+
 .diesirae {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 35px;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -30,7 +34,7 @@
 }
 
 .groupes {
-    color: #F3F3F4!important;
+    color: #78af9f!important;
     font-size: 28px;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -41,7 +45,7 @@
 }
 
 .agenda {
-    color: #dc0d12;
+    color: #b43e23;
     font-size: 30px;
     position: relative;
     bottom: 140px;
@@ -50,7 +54,7 @@
 }
 
 .norm {
-    color: #d5dc0d;
+    color: #eed9b7;
     font-size: 70px;
     position: relative;
     bottom: 65px;
@@ -59,7 +63,7 @@
 }
 
 .association {
-    color: #F3F3F4;
+    color: #78af9f;
     font-size: 40px;
     position: relative;
     bottom: 200px;
@@ -68,7 +72,7 @@
 }
 
 .bismuth {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 35px;
     position: relative;
     bottom: 145px;
@@ -78,7 +82,7 @@
 }
 
 .contact {
-    color: #3B28CC;
+    color: #587f9e;
     font-size: 22px;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -90,7 +94,7 @@
 }
 
 .connexion {
-    color: #3B28CC;
+    color: #587f9e;
     font-size: 28px;
     position: relative;
     bottom: 100px;
@@ -99,7 +103,7 @@
 }
 
 .concerts {
-    color: #F3F3F4!important;
+    color: #78af9f!important;
     font-size: 35px;
     position: relative;
     bottom: 440px;
@@ -107,7 +111,7 @@
 }
 
 .serial {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 30px;
     position: relative;
     bottom: 385px;
@@ -116,7 +120,7 @@
 }
 
 .loi {
-    color: #F3F3F4!important;
+    color: #78af9f!important;
     font-size: 25px;
     position: relative;
     bottom: 330px;
@@ -124,7 +128,7 @@
 }
 
 .prod {
-    color: #d5dc0d;
+    color: #eed9b7;
     font-size: 70px;
     position: relative;
     left: 340px;
@@ -133,7 +137,7 @@
 }
 
 .evenements {
-    color: #F3F3F4!important;
+    color: #78af9f!important;
     font-size: 30px;
     position: relative;
     bottom: 645px;
@@ -141,7 +145,7 @@
 }
 
 .djoh {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 27px;
     position: relative;
     bottom: 595px;
@@ -150,7 +154,7 @@
 }
 
 .geminii {
-    color: #FFE74C;
+    color: #dda032;
     font-size: 35px;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -162,7 +166,7 @@
 }
 
 .rock {
-    color: #F3F3F4;
+    color: white!important;
     font-size: 25px;
     position: relative;
     bottom: 690px;
@@ -170,7 +174,7 @@
 }
 
 .espace {
-    color: #dc0d12;
+    color: #b43e23;
     font-size: 25px;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -182,7 +186,7 @@
 }
 
 .enregistrement {
-    color: #06fd96;
+    color: #d36e2d;
     font-size: 27px;
     position: relative;
     bottom: 600px;
@@ -191,7 +195,7 @@
 }
 
 .utilisateurs {
-    color: #06fd96;
+    color: #d36e2d;
     font-size: 27px;
     position: relative;
     bottom: 600px;
@@ -213,6 +217,7 @@
 .geminii:hover,
 .espace:hover {
     color: #918b8f;
+    text-shadow: none;
     transform: scale(1.1);
     transition-duration: 1s;
 }
@@ -223,6 +228,7 @@
     color: #918b8f;
     transform: scale(0.8);
     transition-duration: 1s;
+    text-shadow: none;
 }
 
 #menu_principal a:hover {
