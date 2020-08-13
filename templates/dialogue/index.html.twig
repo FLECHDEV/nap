@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DialogueController!{% endblock %}
+{% form_theme messageForm 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}NAP-Dialogue{% endblock %}
 
 {% block body %}
 <h2>Nos conversations</h2>
-    <table class="table table-striped table-dark">
+    <table class="table table-striped table-info">
         <thead>
             <tr>
                 <th scope="col">Pseudo</th>
@@ -27,14 +29,9 @@
         </tbody>
     </table>
     <h2>Nouveau message</h2>
+    {{ form_start(messageForm) }}
     {{ form(messageForm) }}
+    {{ form_end(messageForm) }}
     
-    {# <form>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Nouveau message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Envoyer</button>
-    </form> #}
 
 {% endblock %}

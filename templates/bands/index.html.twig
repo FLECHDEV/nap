@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme concertsForm 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}NAP-Concerts{% endblock %}
+
+{% block body %}
+<h2>Prochains concerts</h2>
+        <tbody>
+        {% for band in bands %}
+            {% if date(band.date) > date() %}
+                <p>
+                    {{ band.date|date('d/m/y')}}
+                    {{ band.nom }}
+                    {{ band.concerts }}
+                    {{ band.heure|date('H,i,s') }}
+                </p>
+            {% endif %}
+        {% else %}
+            <p colspan="6">Aucun concert trouvé</p>
+        {% endfor %}
+        </tbody>
+        <br>
+
+        <h2>Concerts passés</h2>
+        <tbody>
+        {% for band in bands %}
+            {% if date(band.date) < date() %}
+                <p>
+                    {{ band.date|date('d/m/y')}}
+                    {{ band.nom }}
+                    {{ band.concerts }}
+                </p>
+            {% endif %}
+        {% else %}
+            <p colspan="6">Aucun concert trouvé</p>
+        {% endfor %}
+        </tbody>
+        {% if is_granted('ROLE_ADMIN') %}
+        {{ form_start(concertsForm) }}
+        {{ form_widget(concertsForm) }}
+        {{ form_end(concertsForm) }}
+        {% endif %}
+{% endblock %}
