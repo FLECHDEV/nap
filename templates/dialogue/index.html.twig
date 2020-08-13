@@ -12,6 +12,9 @@
                 <th scope="col">Pseudo</th>
                 <th scope="col">Message</th>
                 <th scope="col">Date</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <th>coucou</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -20,6 +23,11 @@
                 <td>{{ dialogue.User.username}}</td>
                 <td>{{ dialogue.contenu }}</td>
                 <td>{{ dialogue.createdAt|date('d/m/y') }}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td>
+                    <a href='{{path('delete_dialogue', {'id':dialogue.id})}}' type="button" class="btn btn-danger">X</a>
+                </td>
+                {% endif %} 
             </tr>
         {% else %}
             <tr>

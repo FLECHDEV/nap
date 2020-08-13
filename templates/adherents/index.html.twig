@@ -99,6 +99,41 @@
         <div id="exprime">
             <p id="titreExprime">Exprimez-vous</p>
 
+        <table class="table table-striped table-info">
+        <thead>
+            <tr>
+                <th scope="col">Pseudo</th>
+                <th scope="col">Message</th>
+                <th scope="col">Date</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <th>coucou</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for dialogue in dialogues %}
+            <tr>
+                <td>{{ dialogue.User.username}}</td>
+                <td>{{ dialogue.contenu }}</td>
+                <td>{{ dialogue.createdAt|date('d/m/y') }}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td>
+                    <a href='{{path('delete_dialogue', {'id':dialogue.id})}}' type="button" class="btn btn-danger">X</a>
+                </td>
+                {% endif %} 
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h2>Nouveau message</h2>
+    {{ form_start(messageForm) }}
+    {{ form(messageForm) }}
+    {{ form_end(messageForm) }}
+
         </div>
     </div> 
 {% endblock %}

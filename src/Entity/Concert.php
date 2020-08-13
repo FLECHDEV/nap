@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\BandsRepository;
+use App\Repository\ConcertRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=BandsRepository::class)
+ * @ORM\Entity(repositoryClass=ConcertRepository::class)
  */
-class Bands
+class Concert
 {
     /**
      * @ORM\Id()
@@ -25,7 +25,7 @@ class Bands
     /**
      * @ORM\Column(type="text")
      */
-    private $concerts;
+    private $band;
 
     /**
      * @ORM\Column(type="date")
@@ -54,14 +54,14 @@ class Bands
         return $this;
     }
 
-    public function getConcerts(): ?string
+    public function getBand(): ?string
     {
-        return $this->concerts;
+        return $this->band;
     }
 
-    public function setConcerts(string $concerts): self
+    public function setBand(string $band): self
     {
-        $this->concerts = $concerts;
+        $this->band = $band;
 
         return $this;
     }

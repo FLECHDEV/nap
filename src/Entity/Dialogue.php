@@ -33,10 +33,10 @@ class Dialogue
      */
     private $User;
 
-    public function __toString()
-    {
-        return $this->User;
-    }
+    // public function __toString()
+    // {
+    //     return (string)$this->getID();
+    // }
 
     public function getId(): ?int
     {

@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Bands;
+use App\Entity\Concert;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,8 +17,8 @@ class AjouterConcertType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('nom')
-        ->add('concerts', TextType::class)
+        ->add('nom', TextType::class)
+        ->add('band', TextType::class)
         ->add('date', DateType::class)
         ->add('heure', TimeType::class)
         ->add('save', SubmitType::class, array('label' => 'Ajouter'))
@@ -28,7 +28,7 @@ class AjouterConcertType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Bands::class,
+            'data_class' => Concert::class,
         ]);
     }
 }

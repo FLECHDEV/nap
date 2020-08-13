@@ -7,13 +7,13 @@
 {% block body %}
 <h2>Prochains concerts</h2>
         <tbody>
-        {% for band in bands %}
-            {% if date(band.date) > date() %}
+        {% for concert in concerts %}
+            {% if date(concert.date) > date() %}
                 <p>
-                    {{ band.date|date('d/m/y')}}
-                    {{ band.nom }}
-                    {{ band.concerts }}
-                    {{ band.heure|date('H,i,s') }}
+                    {{ concert.date|date('d/m/y')}}
+                    {{ concert.nom }}
+                    {{ concert.band }}
+                    {{ concert.heure|date('H,i,s') }}
                 </p>
             {% endif %}
         {% else %}
@@ -24,12 +24,12 @@
 
         <h2>Concerts passés</h2>
         <tbody>
-        {% for band in bands %}
-            {% if date(band.date) < date() %}
+        {% for concert in concerts %}
+            {% if date(concert.date) < date() %}
                 <p>
-                    {{ band.date|date('d/m/y')}}
-                    {{ band.nom }}
-                    {{ band.concerts }}
+                    {{ concert.date|date('d/m/y')}}
+                    {{ concert.nom }}
+                    {{ concert.band }}
                 </p>
             {% endif %}
         {% else %}

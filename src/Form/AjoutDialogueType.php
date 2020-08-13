@@ -15,9 +15,12 @@ class AjoutDialogueType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('contenu', TextareaType::class)
-        // ->add('User')
-        ->add('created_at', DateTimeType::class)
+        ->add('contenu', TextareaType::class, [
+            'label' => false,
+            'attr' => [
+                'placeholder' => 'Rentrez votre message...',
+            ],
+        ])
         ->add('Publier', SubmitType::class)
         ;
     }

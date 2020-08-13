@@ -2,40 +2,40 @@
 
 namespace App\Controller;
 
-use App\Entity\Bands;
+use App\Entity\Concert;
 use App\Form\AjouterConcertType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class BandsController extends AbstractController
+class ConcertController extends AbstractController
 {
     /**
-     * @Route("/concerts", name="bands", methods={"GET","POST"})
+     * @Route("/concerts", name="concert", methods={"GET","POST"})
      */
     public function index(Request $request): Response
     {
 
-        $concerts = $this->getDoctrine()->getRepository(Bands::class)->findAll();    
-        $concert = new Bands();
+        $concerts = $this->getDoctrine()->getRepository(Concert::class)->findAll();    
+        $concert = new Concert();
         $form = $this->createForm(AjouterConcertType::class, $concert);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $concert->setNom($this->getNom);
-            $concert->setConcerts($this->getConcerts);
-            $concert->setDate(new \DateTime);
-            $concert->setHeure(new \DateTime);
             $doctrine = $this->getDoctrine()->getManager();
             $doctrine->persist($concert);
             $doctrine->flush();
+
+            // appeler fonction mail 
+
+            return $this->redirectToRoute('concerts');
         }
-        return $this->render('bands/index.html.twig', [
-            'bands' => $concerts,
+        return $this->render('concert/index.html.twig', [
+            'concerts' => $concerts,
             'concertsForm' => $form->createView()
         ]);
     }
 }
-        // return $this->render('bands/index.html.twig', [
-        //     'bands' => $bandsRepository->findAll(),
+        // return $this->render('concert/index.html.twig', [
+        //     'concert' => $concertRepository->findAll(),
