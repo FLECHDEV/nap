@@ -19,22 +19,24 @@
 		<div id="background_menu">
 			<a class="diesirae" href="{{path('diesirae')}}" title="DIES IRAE tribute Noir Désir">DIESIRAE</a>
 			<a class="groupes">groupes</a>
-			<a class="agenda" href="{{path('concert')}}" title="AGENDA">agenda</a>
+			<a class="agenda" href="{{path('concerts')}}" title="AGENDA">agenda</a>
 			<a class="norm" href="{{path ('app_home')}}" title="ACCUEIL">NORM'AND</a>
 			<a class="association" href="{{path('association')}}" title="ASSOCIATION">association</a>
-			<a class="bismuth" href="#" title="BISMUTH">BISMUTH</a>
+			<a class="bismuth" href="{{path('bismuth')}}" title="BISMUTH">BISMUTH</a>
 			<a class="contact" href="{{path ('contact')}}" title="contact">contact</a>
 			<a class="connexion" href="{{path ('app_login')}}" title="Connexion">Connexion</a>
+			<a class="enter" href="{{ path ('entertainus') }}" title="Entertain Us">Entertain Us</a>
 			<a class="concerts">concerts</a>
-			<a class="serial" href="#" title="SERIAL CLOCK KILLER">SERIAL CLOCK KILLER</a>
-			<a class="loi">loi 1901</a>
+			<a class="serial" href="{{ path('serialclockkiller') }}" title="SERIAL CLOCK KILLER">SERIAL CLOCK KILLER</a>
 			<a class="prod" href="{{path ('app_home')}}" title="ACCUEIL">.PROD</a>
 			<a class="evenements">évènements</a>
-			<a class="djoh" href="#" title="DJOH">DJOH</a>
-			<a class="geminii" href="" title="GEMINII">GEMINii</a>
+			<a class="djoh" href="{{ path('djoh') }}" title="DJOH">DJOH</a>
+			<a class="geminii" href="{{ path ('geminii') }}" title="GEMINII">GEMINii</a>
 			<a class="rock">rock</a>
+			<a class="espaceNA"  title="ESPACE ADHERENTS">espace adhérents</a>
+			{% if is_granted('ROLE_USER') %}
 			<a class="espace" href="{{ path('adherents')}}" title="ESPACE ADHERENTS">espace adhérents</a>
-
+			{% endif %}
 			{% if is_granted('ROLE_ADMIN') %}
             <a class="utilisateurs" href="{{path ('user_index') }}" title="UTILISATEURS">utilisateurs</a>
             {% endif %}

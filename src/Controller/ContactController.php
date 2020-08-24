@@ -17,22 +17,22 @@ class ContactController extends AbstractController
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
 
             $message = (new \Swift_Message('Nouveau Contact'))
 
-            ->setFrom($contact['email'])
+                ->setFrom($contact['email'])
 
-            ->setTo('franckypage6@hotmail.com')
+                ->setTo('franckypage6@hotmail.com')
 
-            ->setBody(
-                $this->renderView(
-                    'emails/contact.html.twig', compact('contact')
-                ),
-                'text/html'
-            )
-            ;
+                ->setBody(
+                    $this->renderView(
+                        'emails/contact.html.twig',
+                        compact('contact')
+                    ),
+                    'text/html'
+                );
 
             $mailer->send($message);
             $this->addFlash('message', 'Message envoyé');

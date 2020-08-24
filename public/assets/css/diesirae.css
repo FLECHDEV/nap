@@ -1,8 +1,3 @@
-.text-center {
-    margin: 20px;
-}
-
-.imgDies {
-    display: flex;
-    justify-content: space-around;
+.text-justify {
+    margin: 30px 100px;
 }

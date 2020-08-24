@@ -33,7 +33,7 @@
 }
 
 .groupesP {
-    color: #78af9f;
+    color: #78af9f!important;
     font-size: 18.6px;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -64,7 +64,7 @@
 }
 
 .associationP {
-    color: #78af9f;
+    color: #78af9f!important;
     font-size: 26.66px;
     text-decoration: none;
     position: relative;
@@ -107,12 +107,20 @@
     transition: .3s ease-in-out;
 }
 
+.enterP {
+    color: #dda032;
+    font-size: 19px;
+    position: relative;
+    bottom: 287px;
+    left: 215px;
+}
+
 .concertsP {
-    color: #78af9f;
+    color: #78af9f!important;
     font-size: 23.33px;
     position: relative;
-    bottom: 293.33px;
-    left: 215px;
+    bottom: 220px;
+    left: 155px;
 }
 
 .serialP {
@@ -120,17 +128,9 @@
     font-size: 20px;
     text-decoration: none;
     position: relative;
-    bottom: 259.66px;
-    left: 53px;
+    bottom: 259px;
+    right: 50px;
     transition: .3s ease-in-out;
-}
-
-.loiP {
-    color: #78af9f!important;
-    font-size: 16.66px;
-    position: relative;
-    bottom: 220px;
-    right: 40px;
 }
 
 .prodP {
@@ -144,7 +144,7 @@
 }
 
 .evenementsP {
-    color: #78af9f;
+    color: #78af9f!important;
     font-size: 20px;
     position: relative;
     bottom: 430px;
@@ -182,13 +182,26 @@
     text-orientation: upright;
     position: relative;
     bottom: 360px;
+    right: 4px;
+    letter-spacing: -0.4em;
+    transition: .3s ease-in-out;
+}
+
+.espaceNAP {
+    color: #b43e23!important;
+    font-size: 16.66px;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    bottom: 360px;
     left: 25px;
     letter-spacing: -0.4em;
     transition: .3s ease-in-out;
 }
 
 .rockP {
-    color: #78af9f;
+    color: #ffffff!important;
     font-size: 16.66px;
     position: relative;
     bottom: 460px;
@@ -227,7 +240,8 @@
 .prodP:hover,
 .djohP:hover,
 .geminiiP:hover,
-.espaceP:hover {
+.espaceP:hover,
+.enterP:hover {
     color: #918b8f;
     text-shadow: none;
     transform: scale(1.1);

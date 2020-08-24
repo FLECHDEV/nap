@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}NAP-Connexion{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -8,7 +8,7 @@
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">C'est qui?</h1>
+    <h1 class="h3 mb-3 font-weight-normal">C'est qui ?</h1>
     <label for="inputUsername"></label>
     <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control-sm" placeholder="pseudo" required autofocus><br>
     <label for="inputPassword"></label>
@@ -28,7 +28,7 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-secondary" type="submit">
+    <button class="btn btn-lg btn-info" type="submit">
         Rock'n'roll!
     </button>
 </form>

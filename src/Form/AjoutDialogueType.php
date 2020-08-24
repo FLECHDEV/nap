@@ -7,7 +7,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class AjoutDialogueType extends AbstractType
@@ -18,7 +17,8 @@ class AjoutDialogueType extends AbstractType
         ->add('contenu', TextareaType::class, [
             'label' => false,
             'attr' => [
-                'placeholder' => 'Rentrez votre message...',
+                'class' => 'champs',
+                'placeholder' => 'Votre message ici...',
             ],
         ])
         ->add('Publier', SubmitType::class)

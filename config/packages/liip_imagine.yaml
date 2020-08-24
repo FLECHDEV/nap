@@ -4,13 +4,25 @@ liip_imagine:
     driver: "gd"
     filter_sets:
         logo:
-            quality: 90
+            quality: 100
             filters:
                 scale:
                     dim: [350, 150]
 
-        imagedies:
+        logo2:
             quality: 100
             filters:
                 scale:
-                    dim: [250, 100]
+                    dim: [400, 150]
+
+        logo3:
+            quality: 100
+            filters:
+                scale:
+                    dim: [400, 400]
+
+        pdf:
+            quality: 90
+            filters:
+                scale:
+                    dim: [100, 250]

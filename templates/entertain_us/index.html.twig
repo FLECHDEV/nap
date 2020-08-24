@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NAP-Entertain Us{% endblock %}
+
+{% block body %}
+    <img class="imgEntertainus" src="{{ asset('assets/images/entertainus.png')|imagine_filter('logo2') }}"><br><br>
+    <div id="textentertainUs">
+        <p class="text-center">
+        Kurt Cobain a inventé le "Grunge". Il a aussi marqué toute une génération, les années 90.<br>
+        Mais la musique de Nirvana ne s'est jamais éteinte, bien au contraire !<br>
+        Entertain Us fait revivre ce groupe mythique...
+        </p>
+    </div>
+{% endblock %}

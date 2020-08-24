@@ -1,11 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}NAP-Contact{% endblock %}
+{% form_theme contactForm 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}NAP-Contact
+{% endblock %}
 
 {% block body %}
-    {% for message in app.flashes('message') %}
-        <div class="alert alert-success" role="alert">{{ message }}</div>
-    {% endfor %}
-    <h1>Oui ?</h1>
-    {{ form(contactForm) }}
+	{% for message in app.flashes('message') %}
+		<div class="alert alert-success" role="alert">{{ message }}</div>
+	{% endfor %}
+	<h1>Oui ?</h1>
+	{{ form_start(contactForm)}}
+	{{ form_widget(contactForm) }}
+	<button type="submit" class="btn btn-info">Envoyer</button>
+	<div class="g-recaptcha" data-sitekey="6LcshMEZAAAAANLhJ2kNumlR88lchP5O3dgSVPhc"></div>
+	{{ form_end(contactForm) }}
 {% endblock %}

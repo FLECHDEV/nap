@@ -102,12 +102,20 @@
     transition: .3s ease-in-out;
 }
 
+.enter {
+    color: #dda032;
+    font-size: 30px;
+    position: relative;
+    bottom: 430px;
+    left: 320px;
+}
+
 .concerts {
     color: #78af9f!important;
     font-size: 35px;
     position: relative;
-    bottom: 440px;
-    left: 300px;
+    bottom: 330px;
+    left: 235px;
 }
 
 .serial {
@@ -115,7 +123,7 @@
     font-size: 30px;
     position: relative;
     bottom: 385px;
-    left: 60px;
+    right: 70px;
     transition: .3s ease-in-out;
 }
 
@@ -124,7 +132,8 @@
     font-size: 25px;
     position: relative;
     bottom: 330px;
-    right: 70px;
+    right: 190px;
+    z-index: 1;
 }
 
 .prod {
@@ -180,9 +189,22 @@
     text-orientation: upright;
     position: relative;
     bottom: 540px;
-    left: 45px;
+    left: 5px;
     letter-spacing: -0.4em;
     transition: .3s ease-in-out;
+    z-index: 2;
+}
+
+.espaceNA {
+    color: #b43e23!important;
+    font-size: 25px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: relative;
+    bottom: 540px;
+    left: 45px;
+    letter-spacing: -0.4em;
+    z-index: 1;
 }
 
 .enregistrement {
@@ -215,7 +237,8 @@
 .connexion:hover,
 .prod:hover,
 .geminii:hover,
-.espace:hover {
+.espace:hover,
+.enter:hover {
     color: #918b8f;
     text-shadow: none;
     transform: scale(1.1);

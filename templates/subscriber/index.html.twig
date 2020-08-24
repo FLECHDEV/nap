@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NAP-Newsletter
+{% endblock %}
+
+{% block body %}
+
+	{% for message in app.flashes('message') %}
+		<div class="alert alert-success" role="alert">{{ message }}</div>
+	{% endfor %}
+
+    <h3>Inscription Newsletter</h3>
+
+	{{ form_start(subscriberForm) }}
+	{{ form_row(subscriberForm) }}
+	{{ form_end(subscriberForm) }}
+
+{% endblock %}
