@@ -14,7 +14,11 @@ class UploadType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', FileType::class)
+            ->add('name', FileType::class, [
+                'label' => false, 
+                // unmapped means that this field is not associated to any entity property
+
+            ])
             ->add('Envoyer', SubmitType::class)
         ;
     }

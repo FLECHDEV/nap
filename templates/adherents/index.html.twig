@@ -69,8 +69,15 @@
 
 		<div id="documents">
 			<p id="titreDocuments">Les documents</p><br>
+			{% for document in documents %}
+			<a href="{{ asset('assets/pdf/' ~ document.uri) }}" target="_blank">
+				<img class="imgPDF" src="{{ asset('assets/images/charte.png')|imagine_filter('pdf') }}">
+			</a>
 
-			<a href="{{ asset('assets/pdf/charteNAP.pdf') }}" target="_blank">
+
+			{% endfor %}
+
+			{# <a href="{{ asset('assets/pdf/charteNAP.pdf') }}" target="_blank">
 				<img class="imgPDF" src="{{ asset('assets/images/charte.png')|imagine_filter('pdf') }}">
 			</a>
 
@@ -84,14 +91,23 @@
 
 			<a href="{{ asset('assets/pdf/bulletinAdhesionNAP.pdf') }}" target="_blank">
 				<img class="imgPDF" src="{{ asset('assets/images/bulletin.png')|imagine_filter('pdf') }}">
-			</a>
+			</a> #}
 		</div>
 		<br>
 		<h2>Ajouter un document</h2>
+		{% block javascripts %}
+		<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				bsCustomFileInput.init()
+			})
+		</script>
+		{% endblock %}
+
 		{{ form_start(uploadForm) }}
-			<div class="form-group w-50">
+			<div class="form-group col-8 m-auto">
 				<div class="form-control-file">
-				{{ form(uploadForm) }}
+				{{ form_widget(uploadForm) }}
 				</div>
 			</div>
 		{{ form_end(uploadForm) }}

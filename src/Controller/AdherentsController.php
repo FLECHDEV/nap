@@ -20,7 +20,8 @@ class AdherentsController extends AbstractController
 
         
         // ici je récupére tous les dialogues
-        $dialogues = $this->getDoctrine()->getRepository(Dialogue::class)->findAll();    
+        $dialogues = $this->getDoctrine()->getRepository(Dialogue::class)->findAll();
+        $documents = $this->getDoctrine()->getRepository(Upload::class)->findAll();    
         $message = new Dialogue();
         $form = $this->createForm(AjoutDialogueType::class, $message);
         $form->handleRequest($request);
@@ -29,13 +30,18 @@ class AdherentsController extends AbstractController
 
         $upload = new Upload();
         $Uploadform = $this->createForm(UploadType::class, $upload);
-
         $Uploadform->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+
+        if ($Uploadform->isSubmitted() && $Uploadform->isValid()) {
             $file = $upload->getName();
-            $fileName = md5(uniqid()) .'.'. $file->guessExtension();
-            $file->move($this->getParameter('upload_pdf'), $fileName);
-            $upload->setName($fileName);
+            $fileUri = md5(uniqid()) .'.'. $file->guessExtension();
+            $file->move($this->getParameter('upload_pdf'), $fileUri);
+            $upload->setName($file->getClientOriginalName());
+            $upload->setUri($fileUri);
+
+            $this->addFlash('success', 'Fichier ajouté :) ');
+            $this->getDoctrine()->getManager()->persist($upload);
+            $this->getDoctrine()->getManager()->flush();
             
             return $this->redirectToRoute('adherents');
         }        
@@ -53,7 +59,8 @@ class AdherentsController extends AbstractController
             //et là je les envois au template
             'dialogues' => $dialogues,
             'messageForm' => $form->createView(),
-            'uploadForm'=> $Uploadform->createView()
+            'uploadForm'=> $Uploadform->createView(),
+            'documents' => $documents
         ]);
     }
 }

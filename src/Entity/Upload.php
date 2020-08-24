@@ -22,6 +22,12 @@ class Upload
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $uri;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +41,18 @@ class Upload
     public function setName( $name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getUri(): ?string
+    {
+        return $this->uri;
+    }
+
+    public function setUri(string $uri): self
+    {
+        $this->uri = $uri;
 
         return $this;
     }
