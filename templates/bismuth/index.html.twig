@@ -3,14 +3,19 @@
 {% block title %}NAP-BISMUTH{% endblock %}
 
 {% block body %}
-    <img class="imgBismuth" src="{{ asset('assets/images/bismuth.png') }}"><br><br>
-    <div id="textBismuth">
-        <p class="text-justify">Bismuth (n° atomique 83, symbole Bi) : un métal gris et terne qui prend des formes extraordinaires et des couleurs chatoyantes sitôt qu’il est soumis à l’oxydation.<br>
-BISMUTH, c’est la même chose : au cœur d’un monde de plus en plus sombre et irrespirable, un désir de s’oxyder, c’est-à-dire de se prendre une bonne bouffée d’air à travers la gueule ; une tentative vers quelque chose d’autre, un peu de beauté, un peu de couleur, fût-ce la beauté du désespoir, fût-ce la couleur qu’on aperçoit dans les explosions. Contre l’aliénation où mène la vie moderne : l’envie de revêtir des formes neuves qui n’ont rien à voir avec la folie.
-La musique de BISMUTH   réalise l’oxymore de l’obscur et du chamarré, du grinçant et du mélodieux, de l’espoir et du désarroi. Créature post-rock et rock prog, elle gueule des mots de refus sur un mode poétique et viscéral, repris par les vagues sonores et les riffs obstinés des guitares. Le soutien d’une basse chantante et cogneuse complète cette architecture mélodique, qui vient épouser les lignes rythmiques d’une batterie puissante aux martèlements tantôt sauvages et nerveux, tantôt rêveurs.
-Musique narrative, expressive, urgente, chansons d’ados rebelles et de vieux cons désabusés, le rock de BISMUTH appelle à un ailleurs qui n’existe pas encore ; et s’il vous invite au voyage, il s’agira d’un voyage à l’intérieur de vous-même.
 
-        </p>
+    <img class="imgBismuth" src="{{ asset('assets/images/bismuth.png') }}"><br><br>
+    
+    <div id="textBismuth">
+        {% for groupe in listeGroupe %}
+			{% if groupe.nomGroupe ==  'Bismuth' %}
+				<p class="text-justify">
+					{{ groupe.description}}
+				</p>
+			{% endif %}
+		{% else %}
+			<p colspan="6">Groupe non trouvé</p>
+		{% endfor %}
     </div>
 
     <div id="player">

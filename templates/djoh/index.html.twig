@@ -3,5 +3,16 @@
 {% block title %}NAP-DJOH{% endblock %}
 
 {% block body %}
-<h1>DJOH</h1>
+<h1>DJOH</h1><br>
+    <div id="textDjoh">
+        {% for groupe in listeGroupe %}
+			{% if groupe.nomGroupe ==  'Djoh' %}
+				<p class="text-justify">
+					{{ groupe.description}}
+				</p>
+			{% endif %}
+		{% else %}
+			<p colspan="6">Groupe non trouvé</p>
+		{% endfor %}
+    </div>
 {% endblock %}

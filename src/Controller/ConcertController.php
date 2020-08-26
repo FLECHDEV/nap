@@ -11,7 +11,6 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ConcertController extends AbstractController
@@ -28,7 +27,6 @@ class ConcertController extends AbstractController
 
         //Création du concert et de son formulaire
         $concert = new Concert();
-
         $concertForm = $this->createForm(AjouterConcertType::class, $concert);
         $concertForm->handleRequest($request);
 
@@ -58,8 +56,6 @@ class ConcertController extends AbstractController
             }
             return $this->redirectToRoute('concerts');
         }
-
-
 
         // Soumission du formulaire de newsletter
         if ($subscriberForm->isSubmitted() && $subscriberForm->isValid()) {

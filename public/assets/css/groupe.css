@@ -1,0 +1,11 @@
+#cardGroupe {
+    display: inline-block;
+    justify-content: center;
+}
+
+.card {
+    background-color: #353436;
+    border-color: ivory;
+    max-width: 960px;
+    margin: 10px 10px;
+}

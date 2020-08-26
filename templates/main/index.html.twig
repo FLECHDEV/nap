@@ -6,19 +6,10 @@
 {# Override negative #}
 {% block block_menu %}{% endblock %}
 {% block body %}
-
-    {% for flashError in app.flashes('success') %}
-        <div class="alert alert-success" role="alert">{{ message }}</div>
-    {% endfor %}
-
-	{% for flashError in app.flashes('success') %}
-        <div class="alert alert-danger" role="alert">{{ message }}</div>
-    {% endfor %}
-
 	<div id="menu_principal">
 		<div id="background_menu">
 			<a class="diesirae" href="{{path('diesirae')}}" title="DIES IRAE tribute Noir Désir">DIESIRAE</a>
-			<a class="groupes">groupes</a>
+			<a class="groupes" href="{{path('groupe')}}">groupes</a>
 			<a class="agenda" href="{{path('concerts')}}" title="AGENDA">agenda</a>
 			<a class="norm" href="{{path ('app_home')}}" title="ACCUEIL">NORM'AND</a>
 			<a class="association" href="{{path('association')}}" title="ASSOCIATION">association</a>

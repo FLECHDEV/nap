@@ -4,10 +4,11 @@
 
 {% block body %}
     <h1>Edit {{ user.username }}</h1>
+    <div class="form-group col-8 m-auto">
+        {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    <a type="button" class="btn btn-light btn-lg col-8 m-auto" href="{{ path('user_index') }}">Retour liste</a>
 
-    <a type="button" class="btn btn-light btn-lg btn-block" href="{{ path('user_index') }}">Retour liste</a>
-
-    <a type="button" class="btn btn-danger btn-lg btn-block">{{ include('user/_delete_form.html.twig') }}</a>
+    <a type="button" class="btn btn-danger btn-lg col-8 m-auto">{{ include('user/_delete_form.html.twig') }}</a>
 {% endblock %}

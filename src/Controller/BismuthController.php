@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Groupe;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BismuthController extends AbstractController
 {
@@ -12,8 +13,9 @@ class BismuthController extends AbstractController
      */
     public function index()
     {
+        $listeGroupes = $this->getDoctrine()->getRepository(Groupe::class)->findAll();
         return $this->render('bismuth/index.html.twig', [
-            'controller_name' => 'BismuthController',
+            'listeGroupe' => $listeGroupes
         ]);
     }
 }

@@ -13,6 +13,7 @@
 			<link rel="stylesheet" href='{{ asset('assets/css/menu.css') }}'>
 			<link rel="stylesheet" href='{{ asset('assets/css/diesirae.css') }}'>
 			<link rel="stylesheet" href='{{ asset('assets/css/adherents.css') }}'>
+			<link rel="stylesheet" href='{{ asset('assets/css/groupe.css') }}'>
 			<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
 			<script src='https://www.google.com/recaptcha/api.js'></script>
 			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
@@ -26,12 +27,17 @@
 			{{ include('includes/menu.html.twig') }}
 		{% endblock %}
 
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success" role="alert">{{ message }}</div>
+		{% endfor %}
+
+		{% for flashError in app.flashes('error') %}
+			<div class="alert alert-warning" role="alert">{{ message }}</div>
+		{% endfor %}
+
 		{% block body %}{% endblock %}
 
 		{% block javascripts %}
 			<script src="{{asset('assets/js/app.js')}}"></script>
 		{% endblock %}
-		{# <script type="text/javascript" src="{{ asset('assets/js/adherents.js') }}"></script> #}
-		
-	</body>
-</html>
+</html></body></html>

@@ -5,13 +5,15 @@
 {% block body %}
     <img class="imgGeminii" src="{{ asset('assets/images/geminii.png')|imagine_filter('logo') }}"><br><br>
     <div id="textGeminii">
-        <p class="text-justify">
-De la reverb et des fuzz, voilà ce qu'il fallait pour donner vie aux premières notes de Geminii.
-Créé l'été 2017 par Julien (guitare/chant), le projet prit ses racines lors de jams et d'impros, le groupe étant encore en quête de couleurs et de textures.
-Une section rythmique se dessine alors avec Emile (batterie) et Marsouin (basse/chant), posant, entre placements et mesures asymétriques, des fondations solides pour les experimentations de Thomas (guitare/clavier/thérémine/chant).
-Des compositions naissent alors, mélangeant les influences de chaque membre.
-Grunge progressif ? Post-stoner ? Geminii échappe aux étiquettes de par son identité unique : un furieux mélange de riffs gras, de polyrythmes et d'accords riches et planants, le tout porté par une voix organique qui dont la puissance culmine dans des envolées brutes et écorchées.
-        </p>
+        {% for groupe in listeGroupe %}
+			{% if groupe.nomGroupe ==  'Geminii' %}
+				<p class="text-justify">
+					{{ groupe.description}}
+				</p>
+			{% endif %}
+		{% else %}
+			<p colspan="6">Groupe non trouvé</p>
+		{% endfor %}
     </div>
 
     <div>

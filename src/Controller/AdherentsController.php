@@ -19,9 +19,11 @@ class AdherentsController extends AbstractController
     {
 
         
-        // ici je récupére tous les dialogues
+        // ici je récupére tous les dialogues/Documents
         $dialogues = $this->getDoctrine()->getRepository(Dialogue::class)->findAll();
-        $documents = $this->getDoctrine()->getRepository(Upload::class)->findAll();    
+        $documents = $this->getDoctrine()->getRepository(Upload::class)->findAll();
+
+        // Nouveau Message
         $message = new Dialogue();
         $form = $this->createForm(AjoutDialogueType::class, $message);
         $form->handleRequest($request);
@@ -52,7 +54,9 @@ class AdherentsController extends AbstractController
             $doctrine = $this->getDoctrine()->getManager();
             $doctrine->persist($message);
             $doctrine->flush();
-            return  $this->redirectToRoute('adherents');
+            return  $this->redirectToRoute('adherents', [
+                '_fragment' => 'exprime'
+            ]);
         }
         
         return $this->render('adherents/index.html.twig', [

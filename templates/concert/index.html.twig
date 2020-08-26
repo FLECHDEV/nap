@@ -6,17 +6,14 @@
 {% endblock %}
 
 {% block body %}
-
-	{% for message in app.flashes('message') %}
-		<div class="alert alert-success" role="alert">{{ message }}</div>
-	{% endfor %}
-
     <h3>Inscription Newsletter</h3>
 	<br>
 	<p>Pour recevoir les nouvelles dates de concerts</p>
 	<div id="formSub">
 	{{ form_start(subscriberForm) }}
-	{{ form(subscriberForm) }}
+		<div class="form-group col-8 m-auto">
+		{{ form(subscriberForm) }}
+		</div>
 	{{ form_end(subscriberForm) }}
 	</div>
 
@@ -53,7 +50,9 @@
 	</tbody>
 	{% if is_granted('ROLE_ADMIN') %}
 			{{ form_start(concertsForm) }}
-			{{ form_widget(concertsForm) }}
+				<div class="form-group col-8 m-auto">
+				{{ form_widget(concertsForm) }}
+				</div>
 			{{ form_end(concertsForm) }}
 	{% endif %}
 {% endblock %}

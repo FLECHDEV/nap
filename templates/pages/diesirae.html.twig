@@ -7,13 +7,15 @@
     <img class="imgDiesirae" src="{{ asset('assets/images/logodies.png')|imagine_filter('logo') }}"><br><br>
 
     <div id="textDiesirae">
-        <p class="text-justify">DIES IRAE: Album live du célèbre groupe de rock français "NOIR DÉSIR".
-            Il existe quelques tributes "noir désir" dans notre beau pays qu'est la France mais DIES IRAE a vraiment de la gueule!
-            Une gueule vocale et musicale très proche du quatuor qui nous a bercé pendant des années, fermez les yeux et vous y êtes ! 
-            Une voix déchirante et déchirée, des guitares hurlantes soutenues par le duo basse-batterie,
-            les cinq membres de DIES IRAE vont vous électriser !
-            N'hésitez pas une seconde en la qualité et le rendu scénique de ce tribute, ils mettent le feu !
-        </p>
+        {% for groupe in listeGroupe %}
+			{% if groupe.nomGroupe ==  'Dies Irae' %}
+				<p class="text-justify">
+					{{ groupe.description}}
+				</p>
+			{% endif %}
+		{% else %}
+			<p colspan="6">Groupe non trouvé</p>
+		{% endfor %}
     </div>
     <br>
     <br>

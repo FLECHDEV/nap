@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Groupe;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SerialClockKillerController extends AbstractController
 {
@@ -12,8 +13,9 @@ class SerialClockKillerController extends AbstractController
      */
     public function index()
     {
+        $listeGroupes = $this->getDoctrine()->getRepository(Groupe::class)->findAll();
         return $this->render('serial_clock_killer/index.html.twig', [
-            'controller_name' => 'SerialClockKillerController',
+            'listeGroupe' => $listeGroupes
         ]);
     }
 }
