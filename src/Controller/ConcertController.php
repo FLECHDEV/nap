@@ -37,7 +37,7 @@ class ConcertController extends AbstractController
                 $this->addFlash('error', 'La date est depassée');
                 return $this->redirectToRoute('concerts');
             }
-        
+
             $doctrine = $this->getDoctrine()->getManager();
             $doctrine->persist($concert);
             $doctrine->flush();

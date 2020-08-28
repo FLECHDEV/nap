@@ -14,7 +14,7 @@ class GeminiiController extends AbstractController
     public function index()
     {
         $listeGroupes = $this->getDoctrine()->getRepository(Groupe::class)->findAll();
-        return $this->render('geminii/index.html.twig', [
+        return $this->render('Geminii/index.html.twig', [
             'listeGroupe' => $listeGroupes
         ]);
     }

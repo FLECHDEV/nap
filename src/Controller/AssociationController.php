@@ -14,6 +14,6 @@ class AssociationController extends AbstractController
 
     public function association(): Response
     {
-        return $this->render('pages/association.html.twig');
+        return $this->render('association/association.html.twig');
     }
 }

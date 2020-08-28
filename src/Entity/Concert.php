@@ -37,6 +37,11 @@ class Concert
      */
     private $heure;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Groupe::class)
+     */
+    private $nom_groupe;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Concert
     public function setHeure(\DateTimeInterface $heure): self
     {
         $this->heure = $heure;
+
+        return $this;
+    }
+
+    public function getNomGroupe(): ?Groupe
+    {
+        return $this->nom_groupe;
+    }
+
+    public function setNomGroupe(?Groupe $nom_groupe): self
+    {
+        $this->nom_groupe = $nom_groupe;
 
         return $this;
     }

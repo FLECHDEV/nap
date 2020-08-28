@@ -15,7 +15,7 @@ class DiesiraeController extends AbstractController
     {
         $listeGroupes = $this->getDoctrine()->getRepository(Groupe::class)->findAll();
 
-        return $this->render('pages/diesirae.html.twig', [
+        return $this->render('diesirae/index.html.twig', [
             'listeGroupe' => $listeGroupes
         ]);
 

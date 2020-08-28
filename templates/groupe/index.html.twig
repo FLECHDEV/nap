@@ -20,17 +20,17 @@
 			<div class="card">
 				{# <img class="card-img-top" src="..." alt="Card image cap"> #}
 				<div class="card-body">
-					<h4 class="card-title" style="color: #78af9f;">{{ groupe.nomGroupe }}</h4>
+					<h4 class="card-title" style="color: #78af9f;"><strong>{{ groupe.nomGroupe }}</strong></h4>
 					<h5 class="card-title">{{ groupe.style }}</h5>
 					<h6 class="card-title">	{{ groupe.ville }} </h6>
 					<p class="card-text" style="text-align: justify;">{{ groupe.description }}</p>
-					<a href="#" class="btn" style="background-color: #78af9f;">Consulter</a>
+					{# <a class="btn" href="{{path('{{ groupe.nomGroupe }}') }}" style="background-color: #78af9f;">Consulter</a> #}
 				</div>
 				{% if is_granted('ROLE_ADMIN') %}
 					<a href='{{path('delete_groupe', {'id':groupe.id})}}' type="button" class="btn btn-danger">Supprimer
 					</a>
-					{# <a href='{{path('edit_groupe', {'id':groupe.id})}}' type="button" class="btn btn-warning">Modifier
-					</a> #}
+					<a href='{{path('edit_groupe', {'id':groupe.id})}}' type="button" class="btn btn-warning">Éditer
+					</a>
 				{% endif %}
 			</div>
 		{% else %}

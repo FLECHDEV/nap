@@ -39,7 +39,7 @@ class GroupeController extends AbstractController
 
     /**
      * @Route("/groupe/{id}/delete", name="delete_groupe")    
-    */
+     */
     public function DeleteGroupeAction(string $id, Request $request)
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -49,66 +49,29 @@ class GroupeController extends AbstractController
         return  $this->redirectToRoute('groupe');
     }
 
-    // /**
-    // * @Route("/{id}/edit", name="edit_groupe")  
-    // */
+    /**
+     * @Route("/{id}/edit", name="edit_groupe")  
+     */
+    public function EditGroupeAction(string $id, Request $request, Groupe $groupe): Response
+    {
+        $editGroupeForm = $this->createForm(GroupeType::class, $groupe);
+        $editGroupeForm->handleRequest($request);
 
-    // public function EditGroupeAction(string $id, Request $request)
-    // {
-    //     $entityManager = $this->getDoctrine()->getManager();
-    //     $groupe = $entityManager->getRepository(Groupe::class)->find($id);
+        if ($editGroupeForm->isSubmitted() && $editGroupeForm->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
 
-    //     if (!$groupe) {
-    //         throw $this->createNotFoundException(
-    //             "Pas d'identifiant pour ce groupe ".$id
-    //         );
-    //     }
+            $editGroupeForm = $groupe->getNomGroupe($id);
+            $groupe->setNomGroupe($id);
 
-    //     $editGroupeForm = $this->createForm(GroupeType::class, $groupe);
-    //     $editGroupeForm->handleRequest($request);
+            $entityManager->persist($groupe);
+            $entityManager->flush();
 
-    //     if ($editGroupeForm->isSubmitted()  &&  $editGroupeForm->isValid()) {
-    //         $doctrine = $this->getDoctrine()->getManager();
-    //         $doctrine->persist($groupe);
-    //         $doctrine->flush();
+            return $this->redirectToRoute('groupe');
+        }
 
-    //         $this->addFlash('success', 'Groupe modifié !');
-    //         return $this->redirectToRoute('groupe');
-    //     }
-
-    //     return $this->render('groupe/index.html.twig', [
-    //         'editGroupeForm' => $editGroupeForm->createView()
-    //     ]);
-
-        // $groupe->setNomGroupe($id);
-        // $entityManager->flush();
-        // return  $this->redirectToRoute('groupe', [
-        //     'id' => $groupe->getId()
-        // ]);
+        return $this->render('groupe/editGroupe.html.twig', [
+            'groupe' => $groupe,
+            'editGroupeForm' => $editGroupeForm->createView(),
+        ]);
     }
-
-
-
-
-    // public function EditGroupeAction(string $id, Request $request, Groupe $groupe): Response
-    // {
-    //     $editGroupeForm = $this->createForm(GroupeType::class, $groupe);
-    //     $editGroupeForm->handleRequest($request);
-
-    //     if ($editGroupeForm->isSubmitted() && $editGroupeForm->isValid()) {
-    //         $entityManager = $this->getDoctrine()->getManager();
-
-    //         $editGroupeForm = $groupe->getNomGroupe($id);
-    //         $groupe->setNomGroupe($id);
-
-    //         $entityManager->persist($groupe);
-    //         $entityManager->flush();  
-
-    //         return $this->redirectToRoute('user_index');
-    //     }
-
-    //     return $this->render('groupe/editGroupe.html.twig', [
-    //         'groupe' => $groupe,
-    //         'editGroupeForm' => $editGroupeForm->createView(),
-    //     ]);
-    // }
+}
