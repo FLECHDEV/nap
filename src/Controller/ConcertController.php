@@ -53,7 +53,7 @@ class ConcertController extends AbstractController
                 ->subject('Newsletter Norm"And.Prod')
                 ->htmlTemplate('subscriber/subscribe.html.twig');
 
-            $listeSubscribers = $this->getDoctrine()->getRepository(Subscriber::class)->findAll();
+            $listeSubscribers = $this->getDoctrine()->getRepository(Subscriber::class)->findByBandFollowed($concert->getBand());
             foreach ($listeSubscribers as $subscriber) {
                 $email->cc($subscriber->getMail());
                 $mailer->send($email);

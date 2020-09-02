@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Groupe;
 use App\Entity\Subscriber;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Subscriber|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,32 +20,15 @@ class SubscriberRepository extends ServiceEntityRepository
         parent::__construct($registry, Subscriber::class);
     }
 
-    // /**
-    //  * @return Subscriber[] Returns an array of Newsletter objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findByBandFollowed(Groupe $band)
     {
-        return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('n.id', 'ASC')
-            ->setMaxResults(10)
+        return $this->createQueryBuilder('sub')
+            ->leftJoin('sub.bands', 'bands')
+            ->andWhere('bands.id = :bandID') 
+            ->setParameter('bandID', $band->getId())
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Newsletter
-    {
-        return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
