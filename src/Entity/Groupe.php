@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GroupeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -48,6 +50,16 @@ class Groupe
      * @Assert\Unique
      */
     private $tag;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Subscriber::class, mappedBy="bands")
+     */
+    private $subscribers;
+
+    public function __construct()
+    {
+        $this->subscribers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -122,6 +134,34 @@ class Groupe
     public function setTag(string $tag): self
     {
         $this->tag = $tag;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Subscriber[]
+     */
+    public function getSubscribers(): Collection
+    {
+        return $this->subscribers;
+    }
+
+    public function addSubscriber(Subscriber $subscriber): self
+    {
+        if (!$this->subscribers->contains($subscriber)) {
+            $this->subscribers[] = $subscriber;
+            $subscriber->addBand($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubscriber(Subscriber $subscriber): self
+    {
+        if ($this->subscribers->contains($subscriber)) {
+            $this->subscribers->removeElement($subscriber);
+            $subscriber->removeBand($this);
+        }
 
         return $this;
     }
