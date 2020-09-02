@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\GroupeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=GroupeRepository::class)
@@ -41,6 +42,12 @@ class Groupe
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Unique
+     */
+    private $tag;
 
     public function getId(): ?int
     {
@@ -103,6 +110,18 @@ class Groupe
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getTag(): ?string
+    {
+        return $this->tag;
+    }
+
+    public function setTag(string $tag): self
+    {
+        $this->tag = $tag;
 
         return $this;
     }

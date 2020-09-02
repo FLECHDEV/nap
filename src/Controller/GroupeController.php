@@ -14,7 +14,7 @@ class GroupeController extends AbstractController
     /**
      * @Route("/groupe", name="groupe")
      */
-    public function index(Request $request)
+    public function GroupListindex(Request $request)
     {
         $newGroupe = new Groupe();
         $groupeForm = $this->createForm(GroupeType::class, $newGroupe);
@@ -34,6 +34,18 @@ class GroupeController extends AbstractController
         return $this->render('groupe/index.html.twig', [
             'groupes' => $lesGroupes,
             'groupeForm' => $groupeForm->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/groupe/{tag}")    
+     */
+    public function GroupViewIndex(Request $request, string $tag)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $groupe = $entityManager->getRepository(Groupe::class)->findOneBy(['tag' => $tag]);
+        return $this->render('groupe/'. $tag .'.html.twig', [
+            'groupe' => $groupe
         ]);
     }
 
