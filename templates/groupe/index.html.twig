@@ -20,7 +20,7 @@
 			<div class="card">
 				{# <img class="card-img-top" src="..." alt="Card image cap"> #}
 				<div class="card-body">
-					<h4 class="card-title" style="color: #78af9f;"><strong>{{ groupe.nomGroupe }}</strong></h4>
+					<h4 class="card-title" style="color: #78af9f;"><strong><a href="{{path('app_groupe_groupviewindex', {'tag': groupe.tag })}}">{{ groupe.nomGroupe }}</a></strong></h4>
 					<h5 class="card-title">{{ groupe.style }}</h5>
 					<h6 class="card-title">	{{ groupe.ville }} </h6>
 					<p class="card-text" style="text-align: justify;">{{ groupe.description }}</p>

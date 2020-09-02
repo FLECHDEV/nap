@@ -5,14 +5,8 @@
 {% block body %}
     <img class="imgEntertainus" src="{{ asset('assets/images/entertainus.png')|imagine_filter('logo2') }}"><br><br>
     <div id="textentertainUs">
-        {% for groupe in listeGroupe %}
-			{% if groupe.nomGroupe ==  'Entertain Us (Tribute Nirvana)' %}
-				<p class="text-justify">
-					{{ groupe.description}}
-				</p>
-			{% endif %}
-		{% else %}
-			<p colspan="6">Groupe non trouvé</p>
-		{% endfor %}
+		<p class="text-justify">
+			{{ groupe.description}}
+		</p>
     </div>
 {% endblock %}

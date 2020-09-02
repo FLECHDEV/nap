@@ -1,20 +1,20 @@
     <div id="menu_principalP">
         <div id="background_menuP">
-            <a class="diesiraeP" href="{{path('diesirae')}}" title="DIES IRAE tribute Noir Désir">DIESIRAE</a>
+            <a class="diesiraeP" href="{{path('app_groupe_groupviewindex', {'tag': 'diesirae' })}}" title="DIES IRAE tribute Noir Désir">DIESIRAE</a>
             <a class="groupesP" href="{{path('groupe')}}" >groupes</a>
             <a class="agendaP" href="{{path('concerts')}}" title="AGENDA">agenda</a>
             <a class="normP" href="{{path ('app_home')}}" title="ACCUEIL">NORM'AND</a>
             <a class="associationP" href="{{path('association')}}" title="ASSOCIATION"> association</a>
-            <a class="bismuthP" href="{{path('bismuth')}}" title="BISMUTH">BISMUTH</a>
+            <a class="bismuthP" href="{{path('app_groupe_groupviewindex', {'tag': 'bismuth' })}}" title="BISMUTH">BISMUTH</a>
             <a class="contactP" href="{{path ('contact')}}" title="contact">contact</a>
             <a class="connexionP" href="{{path ('app_login')}}" title="Connexion">Connexion</a>
-            <a class="enterP" href="{{ path ('entertainus') }}" title="Entertain Us">Entertain Us</a>
+            <a class="enterP" href="{{path('app_groupe_groupviewindex', {'tag': 'entertainus' })}}" title="Entertain Us">Entertain Us</a>
             <a class="concertsP">concerts</a>
-            <a class="serialP" href="{{ path('serialclockkiller') }}" title="SERIAL CLOCK KILLER">SERIAL CLOCK KILLER</a>
+            <a class="serialP" href="{{path('app_groupe_groupviewindex', {'tag': 'serialclokkiller' })}}" title="SERIAL CLOCK KILLER">SERIAL CLOCK KILLER</a>
             <a class="prodP" href="{{path ('app_home')}}" title="ACCUEIL">.PROD</a>
             <a class="evenementsP">évènements</a>
-            <a class="djohP" href="{{ path('djoh') }}" title="DJOH">DJOH</a>
-            <a class="geminiiP" href="{{ path ('geminii') }}" title="GEMINII">GEMINii</a>
+            <a class="djohP" href="{{path('app_groupe_groupviewindex', {'tag': 'djoh' })}}" title="DJOH">DJOH</a>
+            <a class="geminiiP" href="{{path('app_groupe_groupviewindex', {'tag': 'geminii' })}}" title="GEMINII">GEMINii</a>
             <a class="rockP">rock</a>        
 			<a class="espaceNAP"  title="ESPACE ADHERENTS">espace adhérents</a>
 			{% if is_granted('ROLE_USER') %}

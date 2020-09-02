@@ -7,15 +7,9 @@
     <img class="imgBismuth" src="{{ asset('assets/images/bismuth.png') }}"><br><br>
     
     <div id="textBismuth">
-        {% for groupe in listeGroupe %}
-			{% if groupe.nomGroupe ==  'Bismuth' %}
-				<p class="text-justify">
-					{{ groupe.description}}
-				</p>
-			{% endif %}
-		{% else %}
-			<p colspan="6">Groupe non trouvé</p>
-		{% endfor %}
+		<p class="text-justify">
+			{{ groupe.description}}
+		</p>
     </div>
 
     <div id="player">
