@@ -2,14 +2,16 @@
 
 namespace App\Form;
 
+use App\Entity\Groupe;
 use App\Entity\Concert;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class AjouterConcertType extends AbstractType
@@ -17,6 +19,10 @@ class AjouterConcertType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        // ->add('nom_groupe', EntityType::class, [
+        //     'class' => Groupe::class,
+        //     'choices' => $nom_groupe->getNomGroupe(),
+        // ])
         ->add('nom', TextType::class)
         ->add('band', ChoiceType::class, [
             'required' => true,

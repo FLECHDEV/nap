@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Exception;
 use App\Entity\Concert;
+use App\Entity\Groupe;
 use App\Entity\Subscriber;
 use App\Form\SubscriberType;
 use App\Form\AjouterConcertType;

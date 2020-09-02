@@ -4,150 +4,152 @@
 {% endblock %}
 
 {% block body %}
-	<div id="adherents">
-		<div id="textAdherents">
-			<p id="titreAdherents">Espace adhérents</p>
-			<p id="resumeAdhrents">Chers adhérents, bienvenue dans vôtre espace Norm’And.Prod.
-				Vous y trouverez toutes les infos dont vous aurez besoins, les règles de l’association,
-				les comptes rendus de réunions, les projets, numéros de téléphones, mails, ainsi qu’un espace blog pour discuter.
-				À bientôt
-			</p>
-		</div>
-		<br><br><br>
+	{% if is_granted('ROLE_USER') %}
+		<div id="adherents">
+			<div id="textAdherents">
+				<p id="titreAdherents">Espace adhérents</p>
+				<p id="resumeAdhrents">Chers adhérents, bienvenue dans vôtre espace Norm’And.Prod.
+									Vous y trouverez toutes les infos dont vous aurez besoins, les règles de l’association,
+									les comptes rendus de réunions, les projets, numéros de téléphones, mails, ainsi qu’un espace blog pour discuter.
+									À bientôt
+				</p>
+			</div>
+			<br><br><br>
 
-		<div id="dirigeants">
-			<p id="titreDirigeants">Les dirigeants</p><br><br>
-			<div id="blocs">
-				<div id="blocTresorierAdj">
-					<img class="imgTresorierAdj" src="{{ asset('assets/images/avatarmick.png') }}"><br>
-					<p class="textTresorierAdj">
-						Secrétaire adjoint<br>
-						Benicourt Mickael<br>
-						06 00 00 00 00
-					</p>
-				</div>
+			<div id="dirigeants">
+				<p id="titreDirigeants">Les dirigeants</p><br><br>
+				<div id="blocs">
+					<div id="blocTresorierAdj">
+						<img class="imgTresorierAdj" src="{{ asset('assets/images/avatarmick.png') }}"><br>
+						<p class="textTresorierAdj">
+							Secrétaire adjoint<br>
+							Benicourt Mickael<br>
+							06 00 00 00 00
+						</p>
+					</div>
 
-				<div id="blocTresorier">
-					<img class="imgTresorier" src="{{ asset('assets/images/avatarfranck.png') }}"><br>
-					<p class="textTresorier">
-						Trésorier<br>
-						Lechangeur Franck<br>
-						06 00 00 00 00
-					</p>
-				</div>
+					<div id="blocTresorier">
+						<img class="imgTresorier" src="{{ asset('assets/images/avatarfranck.png') }}"><br>
+						<p class="textTresorier">
+							Trésorier<br>
+							Lechangeur Franck<br>
+							06 00 00 00 00
+						</p>
+					</div>
 
-				<div id="blocPresident">
-					<img class="imgPresident" src="{{ asset('assets/images/avatarlolo.png') }}"><br>
-					<p class="textPresident">
-						Président<br>
-						Acard Laurent<br>
-						06 00 00 00 00
-					</p>
-				</div>
+					<div id="blocPresident">
+						<img class="imgPresident" src="{{ asset('assets/images/avatarlolo.png') }}"><br>
+						<p class="textPresident">
+							Président<br>
+							Acard Laurent<br>
+							06 00 00 00 00
+						</p>
+					</div>
 
-				<div id="blocSecretaire">
-					<img class="imgSecretaire" src="{{ asset('assets/images/avatarguigui.png') }}"><br>
-					<p class="textSecretaire">
-						Sectrétaire<br>
-						Bouquerel Guillaume<br>
-						06 00 00 00 00
-					</p>
-				</div>
+					<div id="blocSecretaire">
+						<img class="imgSecretaire" src="{{ asset('assets/images/avatarguigui.png') }}"><br>
+						<p class="textSecretaire">
+							Sectrétaire<br>
+							Bouquerel Guillaume<br>
+							06 00 00 00 00
+						</p>
+					</div>
 
-				<div id="blocSecretaireAdj">
-					<img class="imgSecretaireAdj" src="{{ asset('assets/images/avatarju.png') }}"><br>
-					<p class="textSecretaireAdj">
-						Tresorier adj<br>
-						Marie Julien<br>
-						06 00 00 00 00
-					</p>
+					<div id="blocSecretaireAdj">
+						<img class="imgSecretaireAdj" src="{{ asset('assets/images/avatarju.png') }}"><br>
+						<p class="textSecretaireAdj">
+							Tresorier adj<br>
+							Marie Julien<br>
+							06 00 00 00 00
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<br><br>
-
-		<div id="documents">
-			<p id="titreDocuments">Les documents</p><br>
-			<div id="docPdf">
-				{% for document in documents %}
-					<a href="{{ asset('assets/pdf/' ~ document.uri) }}" target="_blank">
-						<img class="imgPDF" src="{{ asset('assets/images/pdf.png')|imagine_filter('pdf') }}"><br>
-						<p id="pdf">{{ document.name }}</p>
-					</a>
-				{% endfor %}
-			</div>
-		</div>
-		<br>
-		{% if is_granted('ROLE_ADMIN') %}
-			<h2>Ajouter un document</h2>
-			{% block javascripts %}
-				<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
-				<script>
-					$(document).ready(function () {
-					bsCustomFileInput.init()
-					})
-				</script>
-			{% endblock %}
-
-			{{ form_start(uploadForm) }}
-			<div class="form-group col-8 m-auto">
-				<div class="form-control-file">
-					{{ form_widget(uploadForm) }}
-				</div>
-			</div>
-			{{ form_end(uploadForm) }}
-		{% endif %}
-
-
-		<br><br>
-
-		<div id="exprime">
-			<p id="titreExprime">Exprimez-vous</p>
-
-			<form action="{{ path('adherents') }}">
-				<input class="btn btn-primary" type="submit" value="Rafraichir les messages"/>
-			</form>
 			<br><br>
 
-			<table class="table table-striped table-light col-8 m-auto">
-				<thead>
-					<tr>
-						<th scope="col">Pseudo</th>
-						<th scope="col">Message</th>
-						<th scope="col">Date/Heure</th>
-						{% if is_granted('ROLE_ADMIN') %}
-							<th>Supprimer</th>
-						{% endif %}
-					</tr>
-				</thead>
-				<tbody class="tDialogue">
-					{% for dialogue in dialogues %}
+			<div id="documents">
+				<p id="titreDocuments">Les documents</p><br>
+				<div id="docPdf">
+					{% for document in documents %}
+						<a href="{{ asset('assets/pdf/' ~ document.uri) }}" target="_blank">
+							<img class="imgPDF" src="{{ asset('assets/images/pdf.png')|imagine_filter('pdf') }}"><br>
+							<p id="pdf">{{ document.name }}</p>
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+			<br>
+			{% if is_granted('ROLE_ADMIN') %}
+				<h2>Ajouter un document</h2>
+				{% block javascripts %}
+					<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+					<script>
+						$(document).ready(function () {
+bsCustomFileInput.init()
+})
+					</script>
+				{% endblock %}
+
+				{{ form_start(uploadForm) }}
+				<div class="form-group col-8 m-auto">
+					<div class="form-control-file">
+						{{ form_widget(uploadForm) }}
+					</div>
+				</div>
+				{{ form_end(uploadForm) }}
+			{% endif %}
+
+
+			<br><br>
+
+			<div id="exprime">
+				<p id="titreExprime">Exprimez-vous</p>
+
+				<form action="{{ path('adherents') }}">
+					<input class="btn btn-primary" type="submit" value="Rafraichir les messages"/>
+				</form>
+				<br><br>
+
+				<table class="table table-striped table-light col-8 m-auto">
+					<thead>
 						<tr>
-							<td>{{ dialogue.User.username}}</td>
-							<td>{{ dialogue.contenu }}</td>
-							<td>{{ dialogue.createdAt|date('d/m/y H:i') }}</td>
+							<th scope="col">Pseudo</th>
+							<th scope="col">Message</th>
+							<th scope="col">Date/Heure</th>
 							{% if is_granted('ROLE_ADMIN') %}
-								<td>
-									<a href='{{path('delete_dialogue', {'id':dialogue.id})}}' type="button" class="btn btn-danger">X</a>
-								</td>
+								<th>Supprimer</th>
 							{% endif %}
 						</tr>
-					{% else %}
-						<tr>
-							<td colspan="6">Aucun enregistrement trouvé</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-			<br>
-			<h2>Nouveau message</h2>
+					</thead>
+					<tbody class="tDialogue">
+						{% for dialogue in dialogues %}
+							<tr>
+								<td>{{ dialogue.User.username}}</td>
+								<td>{{ dialogue.contenu }}</td>
+								<td>{{ dialogue.createdAt|date('d/m/y H:i') }}</td>
+								{% if is_granted('ROLE_ADMIN') %}
+									<td>
+										<a href='{{path('delete_dialogue', {'id':dialogue.id})}}' type="button" class="btn btn-danger">X</a>
+									</td>
+								{% endif %}
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="6">Aucun enregistrement trouvé</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<br>
+				<h2>Nouveau message</h2>
 
-			{{ form_start(messageForm) }}
-			<div class="form-group col-8 m-auto">
-				{{ form(messageForm) }}
+				{{ form_start(messageForm) }}
+				<div class="form-group col-8 m-auto">
+					{{ form(messageForm) }}
+					</div>
+					{{ form_end(messageForm) }}
+
 				</div>
-				{{ form_end(messageForm) }}
-
 			</div>
-		</div>
+		{% endif %}
 	{% endblock %}

@@ -14,6 +14,7 @@ class DjohController extends AbstractController
     public function index()
     {
         $listeGroupes = $this->getDoctrine()->getRepository(Groupe::class)->findAll();
+        
         return $this->render('djoh/index.html.twig', [
             'listeGroupe' => $listeGroupes
         ]);
