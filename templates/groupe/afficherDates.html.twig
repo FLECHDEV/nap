@@ -1,0 +1,16 @@
+{% macro mainLoop(concerts) %}
+
+<h3>Prochains concerts</h3>
+	{% for concert in concerts %}
+		{% if date(concert.date) > date() %}
+			<p>
+				{{ concert.date|date('d/m/y')}}
+				{{ concert.nom }}
+				{{ concert.band.nomGroupe }}
+				{{ concert.heure|date('H:i') }}
+			</p>
+		{% endif %}
+	{% else %}
+		<p colspan="6">Aucun concert trouvé</p>
+	{% endfor %}
+{% endmacro %}

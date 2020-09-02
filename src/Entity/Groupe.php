@@ -56,6 +56,11 @@ class Groupe
      */
     private $subscribers;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Concert::class, mappedBy="band")
+     */
+    private $concerts;
+
     public function __construct()
     {
         $this->subscribers = new ArrayCollection();
@@ -163,6 +168,17 @@ class Groupe
             $subscriber->removeBand($this);
         }
 
+        return $this;
+    }
+
+    public function getConcerts()
+    {
+        return $this->concerts;
+    }
+
+    public function setConcerts($concerts)
+    {
+        $this->concerts = $concerts;
         return $this;
     }
 }

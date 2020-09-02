@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
+{% import 'groupe/afficherDates.html.twig' as afficherDate %}
 
-{% block title %}NAP-Entertain Us{% endblock %}
+{% block title %}NAP-Entertain Us
+{% endblock %}
 
 {% block body %}
-    <img class="imgEntertainus" src="{{ asset('assets/images/entertainus.png')|imagine_filter('logo2') }}"><br><br>
-    <div id="textentertainUs">
+	<img class="imgEntertainus" src="{{ asset('assets/images/entertainus.png')|imagine_filter('logo2') }}"><br><br>
+	<div id="textentertainUs">
 		<p class="text-justify">
 			{{ groupe.description}}
 		</p>
-    </div>
+
+		{{afficherDate.mainLoop(groupe.concerts)}}
+	</div>
 {% endblock %}
+

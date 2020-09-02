@@ -1,7 +1,13 @@
 {% extends 'base.html.twig' %}
 
+{% import 'groupe/afficherDates.html.twig' as afficherDate %}
+
 {% block title %}NAP-Bismuth{% endblock %}
 
 {% block body %}
 <h1>Serial Clock Killer</h1>
+<br>
+<br>
+{{afficherDate.mainLoop(groupe.concerts)}}
+
 {% endblock %}

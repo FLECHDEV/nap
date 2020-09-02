@@ -33,7 +33,7 @@ class Concert
     private $heure;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Groupe::class)
+     * @ORM\ManyToOne(targetEntity=Groupe::class, inversedBy="concerts" )
      */
     private $band;
 
