@@ -8,6 +8,7 @@ use App\Entity\Groupe;
 use App\Entity\Subscriber;
 use App\Form\SubscriberType;
 use App\Form\AjouterConcertType;
+use DateTime;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -34,7 +35,9 @@ class ConcertController extends AbstractController
 
         // Soumission du formulaire de concert. 
         if ($concertForm->isSubmitted() && $concertForm->isValid()) {
-            if ($concert->getDate() > date('now')) {
+
+            $today = new DateTime();
+            if ($concert->getDate() < $today) {
                 $this->addFlash('error', 'La date est depassée');
                 return $this->redirectToRoute('concerts');
             }

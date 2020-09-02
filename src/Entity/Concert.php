@@ -23,11 +23,6 @@ class Concert
     private $nom;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $band;
-
-    /**
      * @ORM\Column(type="date")
      */
     private $date;
@@ -40,7 +35,7 @@ class Concert
     /**
      * @ORM\ManyToOne(targetEntity=Groupe::class)
      */
-    private $nom_groupe;
+    private $band;
 
     public function getId(): ?int
     {
@@ -59,12 +54,12 @@ class Concert
         return $this;
     }
 
-    public function getBand(): ?string
+    public function getBand(): ?Groupe
     {
         return $this->band;
     }
 
-    public function setBand(string $band): self
+    public function setBand(Groupe $band): self
     {
         $this->band = $band;
 
@@ -91,18 +86,6 @@ class Concert
     public function setHeure(\DateTimeInterface $heure): self
     {
         $this->heure = $heure;
-
-        return $this;
-    }
-
-    public function getNomGroupe(): ?Groupe
-    {
-        return $this->nom_groupe;
-    }
-
-    public function setNomGroupe(?Groupe $nom_groupe): self
-    {
-        $this->nom_groupe = $nom_groupe;
 
         return $this;
     }

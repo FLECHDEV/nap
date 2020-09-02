@@ -19,23 +19,13 @@ class AjouterConcertType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        // ->add('nom_groupe', EntityType::class, [
-        //     'class' => Groupe::class,
-        //     'choices' => $nom_groupe->getNomGroupe(),
-        // ])
-        ->add('nom', TextType::class)
-        ->add('band', ChoiceType::class, [
-            'required' => true,
-            'multiple' => false,
-            'choices' => [
-                'Dies Irae'=> 'Dies Irae',
-                'Geminii' => 'Geminii',
-                'Bismuth' => 'Bismuth',
-                'Entertain Us' => 'Entertain Us',
-                'Serial Clock Killer' => 'Serial Clock Killer',
-                'Djoh' => 'Djoh'
-            ]
+        ->add('band', EntityType::class, [
+            'class' => Groupe::class,
+            'choice_label' => 'nomGroupe',
+            'label' => 'Groupe'
+            // 'choices' => $nom_groupe->getNomGroupe(),
         ])
+        ->add('nom', TextType::class)
         ->add('date', DateType::class)
         ->add('heure', TimeType::class)
         ->add('save', SubmitType::class, array('label' => 'Ajouter'))

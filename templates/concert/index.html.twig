@@ -24,7 +24,7 @@
 				<p>
 					{{ concert.date|date('d/m/y')}}
 					{{ concert.nom }}
-					{{ concert.band }}
+					{{ concert.band.nomGroupe }}
 					{{ concert.heure|date('H:i') }}
 				</p>
 			{% endif %}
@@ -41,7 +41,7 @@
 				<p>
 					{{ concert.date|date('d/m/y')}}
 					{{ concert.nom }}
-					{{ concert.band }}
+					{{ concert.band.nomGroupe }}
 				</p>
 			{% endif %}
 		{% else %}
