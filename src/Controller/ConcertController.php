@@ -48,8 +48,8 @@ class ConcertController extends AbstractController
 
             // appeler fonction mail
             $email = (new TemplatedEmail())
-                ->From('normandprod14@gmail.com')
-                ->to('franckypage6@hotmail.com')
+                ->From('')
+                ->to('')
                 ->subject('Newsletter Norm"And.Prod')
                 ->htmlTemplate('subscriber/subscribe.html.twig');
 
